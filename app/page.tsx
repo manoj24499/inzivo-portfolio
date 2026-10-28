@@ -3,15 +3,15 @@ import {
   Overview, Problems, Roadmap, Security, SlideDots, Status, TopNav,
 } from "./components/Sections";
 
-/* Story order: why it is needed, what it is, what each group gets, how it looks, who it fits, proof, trust, status, next. */
+/* Story order: what it is, why it is needed, what each group gets, how it looks, who it fits, proof, trust, status, next. */
 export default function Home() {
   return (
     <>
       <TopNav />
       <SlideDots />
       <Hero />
-      <Problems />
       <Overview />
+      <Problems />
       <Capabilities />
       <AppScreens />
       <Flow />

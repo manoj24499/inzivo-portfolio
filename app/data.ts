@@ -1,6 +1,6 @@
 export const NAV = [
-  ["problems", "Problems"],
   ["overview", "Overview"],
+  ["problems", "Problems"],
   ["capabilities", "Capabilities"],
   ["app", "The app"],
   ["industries", "Industries"],

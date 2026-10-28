@@ -86,7 +86,7 @@ function Tabs({ items, value, onChange, bind }: { items: string[]; value: number
   );
 }
 
-const SLIDE_IDS = ["top", "problems", "overview", "capabilities", "app", "flow", "industries", "numbers", "calculator", "security", "reliability", "status", "roadmap"];
+const SLIDE_IDS = ["top", "overview", "problems", "capabilities", "app", "flow", "industries", "numbers", "calculator", "security", "reliability", "status", "roadmap"];
 const PARENT: Record<string, string> = { calculator: "numbers", flow: "app", reliability: "security" };
 
 /* Dots on the right edge: one per slide, click to jump. */
