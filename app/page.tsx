@@ -1,5 +1,5 @@
 import {
-  AppScreens, Calculator, Capabilities, Flow, Hero, Industries, Numbers,
+  Calculator, Capabilities, Competitors, Flow, Hero, Industries, Numbers,
   Overview, Problems, Roadmap, Security, SlideDots, Status, TopNav,
 } from "./components/Sections";
 
@@ -13,13 +13,13 @@ export default function Home() {
       <Overview />
       <Problems />
       <Capabilities />
-      <AppScreens />
       <Flow />
       <Industries />
       <Numbers />
       <Calculator />
       <Security />
       <Status />
+      <Competitors />
       <Roadmap />
     </>
   );

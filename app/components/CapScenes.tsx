@@ -23,7 +23,7 @@ export const CAP_APPS = ["Admin console", "Employee app", "Field app"];
 const SCENES: Scene[][] = [
   [
     { k: "rows", head: "Today, live", tiles: [["Working", "42", "ok"], ["Late", "3", "warn"], ["On leave", "5", ""], ["Not in yet", "8", ""]], rows: [["user", "Priya", "Office, in at 09:02", "Working"], ["clock", "Arun", "Expected 09:00", "Late 41 min"], ["calendar", "Meena", "Annual leave", "On leave"]] },
-    { k: "prog", head: "Add people", file: "staff.xlsx", label: "Importing people from the spreadsheet", done: "500 people added" },
+    { k: "prog", head: "Add people", file: "staff.xlsx", label: "Importing people from the spreadsheet", done: "500+ people added" },
     { k: "rows", head: "Shifts and locations", rows: [["calendar", "Monday to Friday", "09:00 to 18:00", "Office"], ["home", "Saturday", "10:00 to 14:00", "Home"], ["pin", "Head office", "Geofence radius 150 m", "Set"]] },
     { k: "approve", head: "Requests waiting", rows: [["calendar", "Leave, Kavya", "2 days, 27 to 28 Oct", "Approve", "Approved"], ["clock", "Overtime, Ravi", "2 hours on Saturday", "Approve", "Approved"], ["user", "Short permission, Neha", "1 hour, 11:30 to 12:30", "Approve", "Approved"]] },
     { k: "rows", head: "Manual entry", rows: [["calendar", "Day and person", "21 Oct, Sana"], ["edit", "Reason", "Phone battery died before check-in"], ["file", "Audit trail", "Added by Admin at 11:20", "Logged"]] },

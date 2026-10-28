@@ -7,8 +7,8 @@ import { PhoneScreen } from "./PhoneUI";
 import { CAP_APPS, CAP_ICONS, CapScene } from "./CapScenes";
 import { memo, useEffect, useRef, useState } from "react";
 import {
-  APP_SCREENS, CAPABILITIES, DELIVERED, FLOWS, INDUSTRIES, NAV, OVERVIEW,
-  PROBLEMS, RELIABILITY, ROADMAP, SECURITY, STATS,
+  CAPABILITIES, COMPETITORS, DELIVERED, FLOWS, INDUSTRIES, NAV, OVERVIEW,
+  PROBLEMS, RELIABILITY, ROADMAP, SECURITY, STATS, STRONGEST,
 } from "../data";
 
 const SHOT = (n: number) => `/screens/screen-${n}.jpg`;
@@ -86,8 +86,8 @@ function Tabs({ items, value, onChange, bind }: { items: string[]; value: number
   );
 }
 
-const SLIDE_IDS = ["top", "overview", "problems", "capabilities", "app", "flow", "industries", "numbers", "calculator", "security", "reliability", "status", "roadmap"];
-const PARENT: Record<string, string> = { calculator: "numbers", flow: "app", reliability: "security" };
+const SLIDE_IDS = ["top", "overview", "problems", "capabilities", "flow", "industries", "numbers", "calculator", "security", "reliability", "status", "competitors", "roadmap"];
+const PARENT: Record<string, string> = { calculator: "numbers", reliability: "security" };
 
 /* Dots on the right edge: one per slide, click to jump. */
 export function SlideDots() {
@@ -584,35 +584,6 @@ export function Capabilities() {
   );
 }
 
-export function AppScreens() {
-  const c = useCycle(APP_SCREENS.length, 4500, "app");
-  const { i, setI, bind } = c;
-  const sc = APP_SCREENS[i];
-  return (
-    <section className="slide" id="app"><div className="wrap">
-      <div className="eyebrow">The employee app</div>
-      <h2>The app, screen by screen</h2>
-      <p className="lede">Android and iOS app. Screens from the app&apos;s design, shown with sample data.</p>
-      <Progress c={c} />
-      <div className="app" {...bind}>
-        <div className="steps" role="tablist">
-          {APP_SCREENS.map((s, j) => <button key={s.name} type="button" role="tab" className="step" aria-selected={i === j} onClick={() => setI(j)}><Icon name={iconFor(s.name)} size={18} />{s.name}</button>)}
-        </div>
-        {sc.name === "Requests" ? <div className="device"><PhoneScreen id="req" /></div> : <Phone n={i + 1} alt={sc.name} />}
-        <div className="app-notes">
-          <h3><Badge name={iconFor(sc.name)} size={20} />{sc.name}</h3>
-          <ul className="tick">{sc.bullets.map((b) => <li key={b}>{b}</li>)}</ul>
-          <dl className="behind">
-            <div><dt><Icon name={iconFor("Background tracking")} size={16} />Background tracking</dt><dd>A GPS point every 10 seconds for field workers and every 2 minutes for office and remote staff.</dd></div>
-            <div><dt><Icon name={iconFor("Guided phone settings")} size={16} />Guided phone settings</dt><dd>Checks location and battery settings and shows a Fix now prompt if tracking is at risk.</dd></div>
-            <div><dt><Icon name={iconFor("Push notifications")} size={16} />Push notifications</dt><dd>Shift reminders, leaving-the-area warnings, tracking alerts and automatic check-out notices.</dd></div>
-          </dl>
-        </div>
-      </div>
-    </div></section>
-  );
-}
-
 /* Every step of every work mode in one list, so a single timer walks through Office, then Work from home, then Field. */
 const FLAT = FLOWS.flatMap((m, mi) => m.steps.map((_, si) => ({ mi, si })));
 const START = FLOWS.map((_, mi) => FLAT.findIndex((f) => f.mi === mi));
@@ -725,6 +696,40 @@ export function Roadmap() {
         <span className="logo"><i />INZIVO</span>
         <span>Thank you · Inzivo team · October 2026</span>
       </footer>
+    </div></section>
+  );
+}
+
+export function Competitors() {
+  const markets = ["All", "India", "Global"];
+  const [m, setM] = useState("All");
+  const rows = COMPETITORS.filter((c) => m === "All" || c[1].includes(m));
+  return (
+    <section className="slide" id="competitors"><div className="wrap">
+      <div className="eyebrow">Competitor list</div>
+      <h2>Who Inzivo is up against</h2>
+      <p className="lede">Ten products that teams in India and worldwide use today for attendance and workforce management.</p>
+      <div className="filter">
+        {markets.map((x) => <button key={x} type="button" className="chip" aria-pressed={m === x} onClick={() => setM(x)}>{x === "All" ? <Icon name="layers" size={16} /> : <Icon name="globe" size={16} />}{x}<span className="chip-n">{COMPETITORS.filter((c) => x === "All" || c[1].includes(x)).length}</span></button>)}
+      </div>
+      <div className="comp">
+        {rows.map((c, i) => (
+          <div className="comp-i card" key={c[0]} style={{ animationDelay: `${i * 40}ms` }}>
+            <span className="comp-n">{String(COMPETITORS.indexOf(c) + 1).padStart(2, "0")}</span>
+            <div className="comp-t"><b>{c[0]}</b><span className="comp-m"><Icon name="globe" size={13} />{c[1]}</span></div>
+            <p>{c[2]}</p>
+          </div>
+        ))}
+      </div>
+      <div className="strong card">
+        <div className="strong-h"><Badge name="target" size={20} /><b>{STRONGEST.title}</b><span className="strong-tag"><Icon name="check" size={14} />{STRONGEST.note}</span></div>
+        <div className="strong-g">
+          {STRONGEST.items.map((x, i) => (
+            <div className="strong-i" key={x[1]} style={{ animationDelay: `${i * 80}ms` }}><Badge name={x[0]} size={18} /><span><b>{x[1]}</b><small>{x[2]}</small></span></div>
+          ))}
+        </div>
+      </div>
+      <p className="fine">Service categories are simplified; exact features depend on each product&rsquo;s plan.</p>
     </div></section>
   );
 }

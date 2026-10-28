@@ -2,11 +2,11 @@ export const NAV = [
   ["overview", "Overview"],
   ["problems", "Problems"],
   ["capabilities", "Capabilities"],
-  ["app", "The app"],
   ["industries", "Industries"],
   ["numbers", "Numbers"],
   ["security", "Security"],
   ["status", "Status"],
+  ["competitors", "Competitors"],
   ["roadmap", "Roadmap"],
 ] as const;
 
@@ -60,7 +60,7 @@ export const STATS = [
   ["Distance", "Travel reimbursement", "Calculated from GPS distance and odometer readings."],
   ["3", "Work modes", "Office, work from home and field, each with its own rules."],
   ["15 s", "Live requests", "New requests appear live; approve in one tap."],
-  ["500", "Bulk upload", "Add a whole team from one spreadsheet."],
+  ["500+", "Bulk upload", "Add a whole team from one spreadsheet."],
   ["45 days", "Photo retention", "Photos are retained for 45 days by default. Each organisation can customise the period."],
 ];
 
@@ -80,7 +80,7 @@ export const APP_SCREENS = [
 
 export const SECURITY = [
   ["Secure connections", "HTTPS throughout, strict transport security, a content-security policy, clickjacking protection and no-sniff headers."],
-  ["Credentials", "Passwords and PINs are stored only as bcrypt hashes; chosen PINs must be at least 6 digits."],
+  ["Credentials", "Passwords and PINs are stored securely, never in plain text; chosen PINs must be at least 6 digits."],
   ["Brute-force protection", "Per-person attempt limits (10 per 5 minutes, 30 per hour) shared by kiosk, app and web, plus per-address limits on sign-in, kiosk, password reset and other public endpoints."],
   ["Sessions", "Separate signing keys for web and mobile, 15-minute access tokens, refresh tokens that rotate and can be revoked, and sign-out everywhere in one step."],
   ["Company isolation", "Data access is scoped to the signed-in company, keeping each company's data separate."],
@@ -124,8 +124,8 @@ export const DELIVERED = [
 export const ROADMAP: Record<string, string[]> = {
   "Check-in and locations": ["Multiple office and site locations, each with its own check-in radius", "Shift rotation and open shifts that staff can pick up"],
   "Field work": ["Forms and checklists to complete at each assigned place", "Live map of the whole field team at once", "Refinement of field tracking and the live map"],
-  "Admin and integrations": ["Payroll export of attendance, overtime and leave", "Timesheets and hours per job or project", "Single sign-on and two-factor sign-in for admins"],
-  "Employee app": ["iPhone version of the employee app", "Expense claims with photos: tolls, parking, meals", "Request a missed day to be added from the app"],
+  "Admin and integrations": ["Timesheets and hours per job or project", "Single sign-on and two-factor sign-in for admins"],
+  "Employee app": ["Availability alerts during the shift: ask the employee to confirm they are available at set times", "Expense claims with photos: tolls, parking, meals", "Request a missed day to be added from the app"],
 };
 
 /* Employee flow per work mode. `shot` is a real app screenshot (screen-N.jpg) that matches the step. */
@@ -163,3 +163,27 @@ export const FLOWS: { mode: string; icon: string; steps: FlowStep[] }[] = [
     ],
   },
 ];
+
+export const COMPETITORS = [
+  ["Keka", "India", "HRMS + attendance + payroll"],
+  ["greytHR", "India", "HRMS + attendance + payroll"],
+  ["Zoho People", "India / Global", "HRMS + attendance + leave"],
+  ["Truein", "India", "Attendance + workforce management"],
+  ["factoHR", "India", "HRMS + attendance + payroll"],
+  ["Darwinbox", "India / Global", "Enterprise HRMS + attendance"],
+  ["Connecteam", "Global", "Employee management + time clock + scheduling"],
+  ["Jibble", "Global", "Attendance + time tracking"],
+  ["Hubstaff", "Global", "Time tracking + GPS and workforce monitoring"],
+  ["Deputy", "Global", "Employee scheduling + attendance"],
+] as const;
+
+export const STRONGEST = {
+  title: "Where Inzivo is strongest: field teams",
+  note: "Not listed by any competitor",
+  items: [
+    ["route", "Route map", "See the full route a field worker travelled"],
+    ["camera", "Visit log with photo", "Photo, contact person and remarks at every visit"],
+    ["gauge", "Odometer-based reimbursement", "Travel claims from odometer and GPS kilometres"],
+    ["nav", "Assigned places with directions", "Places given to workers, with in-app directions"],
+  ],
+} as const;
