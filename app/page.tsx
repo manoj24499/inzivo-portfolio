@@ -13,10 +13,10 @@ export default function Home() {
       <Overview />
       <Problems />
       <Capabilities />
+      <Calculator />
       <Flow />
       <Industries />
       <Numbers />
-      <Calculator />
       <Security />
       <Status />
       <Competitors />

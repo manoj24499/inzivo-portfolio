@@ -86,8 +86,8 @@ function Tabs({ items, value, onChange, bind }: { items: string[]; value: number
   );
 }
 
-const SLIDE_IDS = ["top", "overview", "problems", "capabilities", "flow", "industries", "numbers", "calculator", "security", "reliability", "status", "competitors", "roadmap"];
-const PARENT: Record<string, string> = { calculator: "numbers", reliability: "security" };
+const SLIDE_IDS = ["top", "overview", "problems", "capabilities", "calculator", "flow", "industries", "numbers", "security", "reliability", "status", "competitors", "roadmap"];
+const PARENT: Record<string, string> = { calculator: "capabilities", reliability: "security" };
 
 /* Dots on the right edge: one per slide, click to jump. */
 export function SlideDots() {
