@@ -161,7 +161,7 @@ export function Hero() {
         <div className="hero-grid">
           <div>
             <div className="eyebrow">Project portfolio · October 2026</div>
-            <h1>Attendance and field-force management, <em>in one platform</em></h1>
+            <h1>Attendance and Field-Force Management, <em>In One Platform</em></h1>
             <p className="lede">Office, work-from-home and field teams check in with face verification, are tracked on the road, and are managed from a single console.</p>
             <div className="hero-cta">
               <a className="btn" href="#flow">See a day&apos;s flow <Icon name="arrow" size={18} /></a>
@@ -190,12 +190,12 @@ export function Overview() {
   const { i, setI, bind } = c;
   const d = OVERVIEW[i];
   const img =
-    d.name === "Admin dashboard" ? (
+    d.name === "Admin Dashboard" ? (
       <div className="browser">
         <div className="browser-bar"><i /><i /><i /></div>
         <Image src="/screens/cover.jpg" alt="Admin dashboard with alerts and team totals" width={1900} height={1372} sizes="(max-width: 900px) 100vw, 640px" />
       </div>
-    ) : d.name === "Employee web app" ? (
+    ) : d.name === "Employee Web App" ? (
       <div className="browser light">
         <div className="browser-bar"><i /><i /><i /></div>
         <MyPageMock />
@@ -209,7 +209,7 @@ export function Overview() {
   return (
     <section className="slide" id="overview"><div className="wrap">
       <div className="eyebrow">Overview</div>
-      <h2>One platform for every kind of working day</h2>
+      <h2>One Platform for Every Kind of Working Day</h2>
       <p className="lede">Each organisation runs in its own isolated workspace. Employees record attendance through a mobile app or a shared kiosk, and managers oversee operations from a web console. All three share one backend, so an admin sees an employee&apos;s action straight away. A kiosk screen for each company and a public API with keys are part of the platform too.</p>
       <Tabs items={OVERVIEW.map((o) => o.name)} value={i} onChange={setI} bind={bind} />
       <Progress c={c} />
@@ -223,7 +223,7 @@ export function Overview() {
             </dl>
           </div>
           <div className="card panel">
-            <h3><Badge name="zap" />{d.tag}: what it does</h3>
+            <h3><Badge name="zap" />{d.tag}: What It Does</h3>
             <ul className="tick">{d.list.map((x) => <li key={x}>{x}</li>)}</ul>
           </div>
         </div>
@@ -239,7 +239,7 @@ export function Problems() {
   return (
     <section className="slide" id="problems"><div className="wrap">
       <div className="eyebrow">The business case</div>
-      <h2>The problem, and how Inzivo solves it</h2>
+      <h2>The Problem, and How Inzivo Solves It</h2>
       <p className="lede">Managing employee attendance shouldn&apos;t be complicated. Open each row.</p>
       <div className="acc-col" {...bind}>
       <Progress c={c} />
@@ -268,7 +268,7 @@ export function Industries() {
   return (
     <section className="slide" id="industries"><div className="wrap">
       <div className="eyebrow">Audience</div>
-      <h2>Who Inzivo is for</h2>
+      <h2>Who Inzivo Is For</h2>
       <p className="lede">Pick an industry to see the features that cover its needs. Built for teams anywhere, with your own working rules and public-holiday calendar.</p>
       <div className="chips" {...bind}>
         {INDUSTRIES.map((n, j) => (
@@ -289,7 +289,7 @@ export function Numbers() {
   return (
     <section className="slide" id="numbers"><div className="wrap">
       <div className="eyebrow">In numbers</div>
-      <h2>The product at a glance</h2>
+      <h2>The Product at a Glance</h2>
       <p className="lede">Figures describe the product as built in October 2026. Distance accuracy and data use come from a measured 135 km field trip.</p>
       <div className="stats">
         {STATS.map((s) => (
@@ -470,7 +470,7 @@ export function Calculator() {
   return (
     <section className="slide" id="calculator"><div className="wrap">
       <div className="eyebrow">Live tracking and travel reimbursement</div>
-      <h2>Every kilometre, tracked and counted</h2>
+      <h2>Every Kilometre, Tracked and Counted</h2>
       <div className="card lm" onPointerEnter={(e) => { if (e.pointerType === "mouse") setHov(true); }} onPointerLeave={() => setHov(false)}>
         <div className="lm-bar"><span style={{ transform: `scaleX(${u})` }} /></div>
         <div className="lm-map">
@@ -543,7 +543,7 @@ export function Capabilities() {
   return (
     <section className="slide" id="capabilities"><div className="wrap">
       <div className="eyebrow">Capabilities</div>
-      <h2>What each group of people gets</h2>
+      <h2>What Each Group of People Gets</h2>
       <p className="lede"><b style={{ color: "var(--ink)" }}>Role-based by design.</b> Each person sees only the tools their role needs, and each company&apos;s data is kept separate.</p>
       <div className="caps">
         <div className="caps-l" {...c.bind}>
@@ -598,7 +598,7 @@ export function Flow() {
   return (
     <section className="slide" id="flow"><div className="wrap">
       <div className="eyebrow">Employee flow</div>
-      <h2>A day for every work mode</h2>
+      <h2>A Day for Every Work Mode</h2>
       <p className="lede">Follow an employee from the first reminder to check-out. Each work mode has its own rules.</p>
       <div className="tabs" role="tablist" {...c.bind}>
         {FLOWS.map((m, j) => (
@@ -651,12 +651,12 @@ export function Security() {
     <>
       <section className="slide" id="security"><div className="wrap">
         <div className="eyebrow">Security</div>
-        <h2>Built to protect people&apos;s data</h2>
+        <h2>Built to Protect People&apos;s Data</h2>
         <Details items={SECURITY} />
       </div></section>
       <section className="slide" id="reliability"><div className="wrap">
         <div className="eyebrow">Reliability and operations</div>
-        <h2>Built to keep running</h2>
+        <h2>Built to Keep Running</h2>
         <Details items={RELIABILITY} />
       </div></section>
     </>
@@ -669,7 +669,7 @@ export function Status() {
   return (
     <section className="slide" id="status"><div className="wrap">
       <div className="eyebrow">Status</div>
-      <h2>Where things stand</h2>
+      <h2>Where Things Stand</h2>
       <div className="filter">
         {cats.map((c) => <button key={c} type="button" className="chip" aria-pressed={cur === c} onClick={() => setCur(c)}>{c !== "All" && <Icon name={iconFor(c)} size={16} />}{c}</button>)}
       </div>
@@ -686,7 +686,7 @@ export function Roadmap() {
   return (
     <section className="slide" id="roadmap"><div className="wrap">
       <div className="eyebrow">Roadmap</div>
-      <h2>What comes after launch</h2>
+      <h2>What Comes After Launch</h2>
       <div className="road">
         {Object.entries(ROADMAP).map(([k, v]) => (
           <div className="card panel" key={k}><h3><Badge name={iconFor(k)} size={18} />{k}</h3><ul className="tick">{v.map((x) => <li key={x}>{x}</li>)}</ul></div>
@@ -707,7 +707,7 @@ export function Competitors() {
   return (
     <section className="slide" id="competitors"><div className="wrap">
       <div className="eyebrow">Competitor list</div>
-      <h2>Who Inzivo is up against</h2>
+      <h2>Who Inzivo Is Up Against</h2>
       <p className="lede">Ten products that teams in India and worldwide use today for attendance and workforce management.</p>
       <div className="filter">
         {markets.map((x) => <button key={x} type="button" className="chip" aria-pressed={m === x} onClick={() => setM(x)}>{x === "All" ? <Icon name="layers" size={16} /> : <Icon name="globe" size={16} />}{x}<span className="chip-n">{COMPETITORS.filter((c) => x === "All" || c[1].includes(x)).length}</span></button>)}
@@ -772,7 +772,7 @@ export function Costing() {
   return (
     <section className="slide" id="costing"><div className="wrap">
       <div className="eyebrow">Costing</div>
-      <h2>What it costs, and when it pays for itself</h2>
+      <h2>What It Costs, and When It Pays for Itself</h2>
       <div className="cost">
         <div className="card cost-c">
           <h3 className="cost-h"><Badge name="receipt" size={18} />Monthly expenses</h3>
@@ -813,7 +813,7 @@ export function Pricing() {
   return (
     <section className="slide" id="pricing"><div className="wrap">
       <div className="eyebrow">Price comparison</div>
-      <h2>Everything in one place, for ₹89 a user</h2>
+      <h2>Everything in One Place, for ₹89 a User</h2>
       <p className="lede">Competitors charge per plan or add-on for features that come together in Inzivo.</p>
       <div className="pr">
         <div className="pr-head"><span>Competitor and plan</span><span>Price</span><span>What the plan adds</span><span>Approx. per user at 100 employees</span></div>

@@ -68,34 +68,34 @@ export function Badge({ name, size = 20 }: { name: IconName; size?: number }) {
 /* Icon for each titled item in the content, so data files stay plain text. */
 const BY_TITLE: Record<string, IconName> = {
   // overview
-  "Admin dashboard": "monitor", "Employee web app": "globe", "Mobile app": "phone",
+  "Admin Dashboard": "monitor", "Employee Web App": "globe", "Mobile App": "phone",
   // problems
-  "Attendance is hard to manage": "file", "No clear proof of attendance": "eye", "Field employees are difficult to track": "route",
-  "Working hours can be incorrect": "clock", "Travel expenses are difficult to calculate": "money", "Different teams use different systems": "layers",
+  "Attendance Is Hard to Manage": "file", "No Clear Proof of Attendance": "eye", "Field Employees Are Difficult to Track": "route",
+  "Working Hours Can Be Incorrect": "clock", "Travel Expenses Are Difficult to Calculate": "money", "Different Teams Use Different Systems": "layers",
   // console callouts
-  "Approve in one tap": "check", "Missed face checks": "face", "Tracking stopped": "offline", "Who is working now": "users", "Today at a glance": "activity",
+  "Approve in One Tap": "check", "Missed Face Checks": "face", "Tracking Stopped": "offline", "Who Is Working Now": "users", "Today at a Glance": "activity",
   // industries
-  "FMCG and consumer goods": "store", "Pharma sales": "pill", "Field service": "wrench", "Maintenance": "settings", "Collections and recovery": "receipt",
-  "Surveys and research": "search", "Logistics and delivery": "truck", "Contract and customer-site staff": "building", "Hybrid offices": "briefcase",
+  "FMCG and Consumer Goods": "store", "Pharma Sales": "pill", "Field Service": "wrench", "Maintenance": "settings", "Collections and Recovery": "receipt",
+  "Surveys and Research": "search", "Logistics and Delivery": "truck", "Contract and Customer-Site Staff": "building", "Hybrid Offices": "briefcase",
   // stats
-  "Face verification": "face", "Mobile data a day": "download", "Distance accuracy": "gauge", "Field-worker tracking": "route", "Office and WFH staff": "clock",
-  "Check-in zones": "target", "Location security": "shield", "Data sync": "refresh", "Automatic checks": "zap", "Check-out reminder": "bell",
-  "Travel reimbursement": "money", "Work modes": "layers", "Live requests": "activity", "Bulk upload": "upload", "Photo retention": "camera",
+  "Face Verification": "face", "Mobile Data a Day": "download", "Distance Accuracy": "gauge", "Field-Worker Tracking": "route", "Office and WFH Staff": "clock",
+  "Check-In Zones": "target", "Location Security": "shield", "Data Sync": "refresh", "Automatic Checks": "zap", "Check-Out Reminder": "bell",
+  "Travel Reimbursement": "money", "Work Modes": "layers", "Live Requests": "activity", "Bulk Upload": "upload", "Photo Retention": "camera",
   // capabilities
-  Administrators: "monitor", Employees: "user", "Field teams": "truck",
+  Administrators: "monitor", Employees: "user", "Field Teams": "truck",
   // app screens
-  "Face-verified check-in": "login", Dashboard: "activity", "Today's places": "pin", Navigation: "nav", Requests: "calendar",
-  "Background tracking": "route", "Guided phone settings": "settings", "Push notifications": "bell",
+  "Face-Verified Check-In": "login", Dashboard: "activity", "Today's Places": "pin", Navigation: "nav", Requests: "calendar",
+  "Background Tracking": "route", "Guided Phone Settings": "settings", "Push Notifications": "bell",
   // security
-  "Secure connections": "lock", Credentials: "key", "Brute-force protection": "shield", Sessions: "refresh", "Company isolation": "building",
-  "Presence integrity": "face", "Audit trail": "file", "Safe data handling": "database", Integrations: "layers", "Kept current": "check",
+  "Secure Connections": "lock", Credentials: "key", "Brute-Force Protection": "shield", Sessions: "refresh", "Company Isolation": "building",
+  "Presence Integrity": "face", "Audit Trail": "file", "Safe Data Handling": "database", Integrations: "layers", "Kept Current": "check",
   // reliability
-  Hosting: "cloud", Database: "database", "Fast face checks": "zap", "Health endpoint": "activity", Scheduler: "clock",
-  "Offline check-in": "offline", "Phone settings": "phone", "Live admin screens": "monitor",
+  Hosting: "cloud", Database: "database", "Fast Face Checks": "zap", "Health Endpoint": "activity", Scheduler: "clock",
+  "Offline Check-In": "offline", "Phone Settings": "phone", "Live Admin Screens": "monitor",
   // status categories
   Platform: "layers", Security: "shield", Field: "route", Automation: "zap", Reports: "file", Admin: "settings", Design: "edit", Business: "card",
   // roadmap
-  "Check-in and locations": "pin", "Field work": "route", "Admin and integrations": "settings", "Employee app": "phone",
+  "Check-In and Locations": "pin", "Field Work": "route", "Admin and Integrations": "settings", "Employee App": "phone",
 };
 
 export function iconFor(title: string, fallback: IconName = "check"): IconName {
