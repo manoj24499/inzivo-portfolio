@@ -21,8 +21,8 @@ export default function Home() {
       <Status />
       <Competitors />
       <Pricing />
-      <Costing />
       <Roadmap />
+      <Costing />
     </>
   );
 }

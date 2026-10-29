@@ -86,7 +86,7 @@ function Tabs({ items, value, onChange, bind }: { items: string[]; value: number
   );
 }
 
-const SLIDE_IDS = ["top", "overview", "problems", "capabilities", "flow", "calculator", "industries", "numbers", "security", "reliability", "status", "competitors", "pricing", "costing", "roadmap"];
+const SLIDE_IDS = ["top", "overview", "problems", "capabilities", "flow", "calculator", "industries", "numbers", "security", "reliability", "status", "competitors", "pricing", "roadmap", "costing"];
 const PARENT: Record<string, string> = { flow: "capabilities", calculator: "capabilities", reliability: "security" };
 
 /* Dots on the right edge: one per slide, click to jump. */
@@ -737,7 +737,7 @@ export function Competitors() {
   );
 }
 
-const COST0 = { salaries: 150000, server: 40000, price: 89, staff: 100 };
+const COST0 = { server: 40000, price: 89, staff: 100 };
 type CostKey = keyof typeof COST0;
 const inr = (n: number) => `${n < 0 ? "-" : ""}₹${Math.abs(n).toLocaleString("en-IN")}`;
 
@@ -759,7 +759,7 @@ export function Costing() {
   const [c, setC] = useState(COST0);
   const [orgs, setOrgs] = useState(30);
   const set = (k: CostKey, n: number) => setC((o) => ({ ...o, [k]: n }));
-  const total = c.salaries + c.server;
+  const total = c.server;
   const perOrg = c.price * c.staff;
   const brk = perOrg > 0 ? Math.ceil(total / perOrg) : 0;
   const max = Math.max(50, Math.ceil(brk * 1.6));
@@ -776,7 +776,6 @@ export function Costing() {
       <div className="cost">
         <div className="card cost-c">
           <h3 className="cost-h"><Badge name="receipt" size={18} />Monthly expenses</h3>
-          <CostField label="Salaries" k="salaries" v={c.salaries} set={set} />
           <CostField label="Server and all included services" k="server" v={c.server} set={set} />
           <div className="cost-r total"><span>Total monthly expenses</span><b>{inr(total)}</b></div>
         </div>

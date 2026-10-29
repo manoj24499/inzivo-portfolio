@@ -8,8 +8,8 @@ export const NAV = [
   ["status", "Status"],
   ["competitors", "Competitors"],
   ["pricing", "Pricing"],
-  ["costing", "Costing"],
   ["roadmap", "Roadmap"],
+  ["costing", "Costing"],
 ] as const;
 
 export const OVERVIEW = [
