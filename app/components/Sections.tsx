@@ -8,7 +8,7 @@ import { CAP_APPS, CAP_ICONS, CapScene } from "./CapScenes";
 import { memo, useEffect, useRef, useState } from "react";
 import {
   CAPABILITIES, COMPETITORS, DELIVERED, FLOWS, INDUSTRIES, NAV, OVERVIEW,
-  PROBLEMS, RELIABILITY, ROADMAP, SECURITY, STATS, STRONGEST,
+  PRICING, PROBLEMS, RELIABILITY, ROADMAP, SECURITY, STATS, STRONGEST,
 } from "../data";
 
 const SHOT = (n: number) => `/screens/screen-${n}.jpg`;
@@ -86,7 +86,7 @@ function Tabs({ items, value, onChange, bind }: { items: string[]; value: number
   );
 }
 
-const SLIDE_IDS = ["top", "overview", "problems", "capabilities", "flow", "calculator", "industries", "competitors", "numbers", "security", "reliability", "status", "roadmap"];
+const SLIDE_IDS = ["top", "overview", "problems", "capabilities", "flow", "calculator", "industries", "numbers", "security", "reliability", "status", "competitors", "pricing", "costing", "roadmap"];
 const PARENT: Record<string, string> = { flow: "capabilities", calculator: "capabilities", reliability: "security" };
 
 /* Dots on the right edge: one per slide, click to jump. */
@@ -733,6 +733,106 @@ export function Competitors() {
         </div>
       </div>
       <p className="fine">Service categories are simplified; exact features depend on each product&rsquo;s plan.</p>
+    </div></section>
+  );
+}
+
+const COST0 = { salaries: 150000, server: 40000, price: 89, staff: 100 };
+type CostKey = keyof typeof COST0;
+const inr = (n: number) => `${n < 0 ? "-" : ""}₹${Math.abs(n).toLocaleString("en-IN")}`;
+
+/* A value the reader can change: the rupee sign and unit sit outside the number box. */
+function CostField({ label, k, v, set, unit, money = true }: { label: string; k: CostKey; v: number; set: (k: CostKey, n: number) => void; unit?: string; money?: boolean }) {
+  return (
+    <label className="cost-r">
+      <span>{label}</span>
+      <span className="cost-in">
+        {money && <i>{"₹"}</i>}
+        <input type="number" inputMode="numeric" min={0} value={v} onChange={(e) => set(k, Math.max(0, Number(e.target.value) || 0))} aria-label={label} />
+        {unit && <em>{unit}</em>}
+      </span>
+    </label>
+  );
+}
+
+export function Costing() {
+  const [c, setC] = useState(COST0);
+  const [orgs, setOrgs] = useState(30);
+  const set = (k: CostKey, n: number) => setC((o) => ({ ...o, [k]: n }));
+  const total = c.salaries + c.server;
+  const perOrg = c.price * c.staff;
+  const brk = perOrg > 0 ? Math.ceil(total / perOrg) : 0;
+  const max = Math.max(50, Math.ceil(brk * 1.6));
+  const n = Math.min(orgs, max);
+  const revenue = n * perOrg;
+  const balance = revenue - total;
+  const top = Math.max(revenue, total, 1);
+  const ok = perOrg > 0 && n >= brk;
+  const edited = (Object.keys(COST0) as CostKey[]).some((k) => c[k] !== COST0[k]);
+  return (
+    <section className="slide" id="costing"><div className="wrap">
+      <div className="eyebrow">Costing</div>
+      <h2>What it costs, and when it pays for itself</h2>
+      <div className="cost">
+        <div className="card cost-c">
+          <h3 className="cost-h"><Badge name="receipt" size={18} />Monthly expenses</h3>
+          <CostField label="Salaries" k="salaries" v={c.salaries} set={set} />
+          <CostField label="Server and all included services" k="server" v={c.server} set={set} />
+          <div className="cost-r total"><span>Total monthly expenses</span><b>{inr(total)}</b></div>
+        </div>
+        <div className="card cost-c">
+          <h3 className="cost-h"><Badge name="users" size={18} />Pricing</h3>
+          <CostField label="Price per employee" k="price" v={c.price} set={set} unit="/month" />
+          <CostField label="Employees per organisation" k="staff" v={c.staff} set={set} money={false} />
+          <div className="cost-r total"><span>Revenue per organisation</span><b>{inr(perOrg)}/month</b></div>
+        </div>
+        <div className="card cost-c cost-be">
+          <h3 className="cost-h"><Badge name="target" size={18} />Break-even target{edited && <button type="button" className="cost-reset" onClick={() => setC(COST0)}><Icon name="refresh" size={13} />Reset</button>}</h3>
+          <div className="cost-big"><b>{perOrg > 0 ? brk : "–"}</b><span>organisations to break even</span></div>
+          <label className="cost-s">
+            <span>Organisations paying <b>{n}</b></span>
+            <input type="range" min={0} max={max} step={1} value={n} onChange={(e) => setOrgs(Number(e.target.value))} aria-label="Number of paying organisations" />
+          </label>
+          <div className="cost-bars">
+            <div><span>Monthly revenue</span><i className="rev" style={{ width: `${(revenue / top) * 100}%` }} /><b>{inr(revenue)}</b></div>
+            <div><span>Monthly expenses</span><i className="exp" style={{ width: `${(total / top) * 100}%` }} /><b>{inr(total)}</b></div>
+          </div>
+          <div className={`cost-bal${ok ? " ok" : ""}`}>
+            <span>{ok ? "Monthly balance" : perOrg > 0 ? `${brk - n} more organisation${brk - n === 1 ? "" : "s"} needed` : "Set a price and employee count"}</span>
+            <b>{inr(balance)}</b>
+          </div>
+        </div>
+      </div>
+      <p className="fine">Edit any figure to try a different plan. This assumes all {c.staff} employees in each organisation are paying subscribers at {inr(c.price)} per month, and that the {inr(c.server)} server budget covers all the services listed.</p>
+    </div></section>
+  );
+}
+
+export function Pricing() {
+  const MAX = 400;
+  return (
+    <section className="slide" id="pricing"><div className="wrap">
+      <div className="eyebrow">Price comparison</div>
+      <h2>Everything in one place, for ₹89 a user</h2>
+      <p className="lede">Competitors charge per plan or add-on for features that come together in Inzivo.</p>
+      <div className="pr">
+        <div className="pr-head"><span>Competitor and plan</span><span>Price</span><span>What the plan adds</span><span>Approx. per user at 100 employees</span></div>
+        {PRICING.map((p, i) => (
+          <div className="pr-r card" key={p.name} style={{ animationDelay: `${i * 70}ms` }}>
+            <div className="pr-n"><b>{p.name}</b><small>{p.plan}</small></div>
+            <div className="pr-p"><b>{p.price}</b><small>{p.terms}</small></div>
+            <div className="pr-a">{p.adds && <span>{p.adds}</span>}{"flag" in p && <em>{p.flag}</em>}<small className="pr-src">{p.source}</small></div>
+            <div className="pr-b"><i style={{ width: `${(p.perUser / MAX) * 100}%` }} /><b>{"≈ "}{"₹"}{p.perUser}</b></div>
+          </div>
+        ))}
+        <div className="pr-r pr-us card" style={{ animationDelay: "280ms" }}>
+          <div className="pr-n"><b>Inzivo</b><small>All features included</small></div>
+          <div className="pr-p"><b>{"₹"}89 a user a month</b><small>One price, no add-ons</small></div>
+          <div className="pr-a"><span>Attendance, face verification, field tracking, routes, visit logs, reimbursement, approvals and reports</span></div>
+          <div className="pr-b"><i style={{ width: `${(89 / MAX) * 100}%` }} /><b>{"₹"}89</b></div>
+        </div>
+      </div>
+      <p className="fine">Competitor prices are as supplied and should be re-checked before presenting. Keka and Connecteam per-user figures are worked out for 100 employees from their plan price; greytHR is an add-on cost on top of its base plan; Zoho excludes 18% GST.</p>
     </div></section>
   );
 }

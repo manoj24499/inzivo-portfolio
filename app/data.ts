@@ -3,10 +3,12 @@ export const NAV = [
   ["problems", "Problems"],
   ["capabilities", "Capabilities"],
   ["industries", "Industries"],
-  ["competitors", "Competitors"],
   ["numbers", "Numbers"],
   ["security", "Security"],
   ["status", "Status"],
+  ["competitors", "Competitors"],
+  ["pricing", "Pricing"],
+  ["costing", "Costing"],
   ["roadmap", "Roadmap"],
 ] as const;
 
@@ -185,3 +187,11 @@ export const STRONGEST = {
     { name: "Admins and managers", icon: "monitor", items: ["One platform for office, home and field", "Approve leave, overtime and permissions in one tap", "Add 500+ people from one spreadsheet", "Alerts for stopped tracking and missed face checks"] },
   ],
 } as const;
+
+/* Competitor list prices as supplied. `perUser` is the approximate monthly cost per user for a 100-employee team. */
+export const PRICING = [
+  { name: "greytHR", plan: "GPS Live Tracking (add-on)", price: "₹140 a user a month", terms: "Growth and Premium plans only", adds: "Live location of field staff", source: "Official", perUser: 140, flag: "Add-on only, on top of the base plan" },
+  { name: "Keka", plan: "Growth", price: "₹15,999 a month", terms: "First 100 employees, then ₹150 per extra employee", adds: "Adds advanced shift rules", source: "Third-party", perUser: 160 },
+  { name: "Zoho People", plan: "Enterprise", price: "₹192 a user a month", terms: "Billed yearly, excluding 18% GST", adds: "", source: "Third-party", perUser: 192, flag: "Other sources show ₹300+: needs verification" },
+  { name: "Connecteam", plan: "Expert", price: "About ₹9,550 a month", terms: "First 30 users, then about ₹405 per extra user", adds: "Adds unlimited geofence sites and API access", source: "Official (converted)", perUser: 379 },
+] as const;
