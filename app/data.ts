@@ -178,12 +178,10 @@ export const COMPETITORS = [
 ] as const;
 
 export const STRONGEST = {
-  title: "Where Inzivo is strongest: field teams",
-  note: "Not listed by any competitor",
-  items: [
-    ["route", "Route map", "See the full route a field worker travelled"],
-    ["camera", "Visit log with photo", "Photo, contact person and remarks at every visit"],
-    ["gauge", "Odometer-based reimbursement", "Travel claims from odometer and GPS kilometres"],
-    ["nav", "Assigned places with directions", "Places given to workers, with in-app directions"],
+  title: "Where Inzivo is strongest",
+  groups: [
+    { name: "Field teams", icon: "truck", note: "Not listed by any competitor", items: ["Route map of the full day", "Visit log with photo", "Odometer-based reimbursement", "Assigned places with in-app directions"] },
+    { name: "Office and remote teams", icon: "building", items: ["Face match and live-face check on every check-in", "Geofence check-in; working time pauses outside the area", "Fake-GPS apps detected and rejected", "Automatic check-out and shift reminders"] },
+    { name: "Admins and managers", icon: "monitor", items: ["One platform for office, home and field", "Approve leave, overtime and permissions in one tap", "Add 500+ people from one spreadsheet", "Alerts for stopped tracking and missed face checks"] },
   ],
 } as const;

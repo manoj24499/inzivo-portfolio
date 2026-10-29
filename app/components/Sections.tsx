@@ -722,10 +722,13 @@ export function Competitors() {
         ))}
       </div>
       <div className="strong card">
-        <div className="strong-h"><Badge name="target" size={20} /><b>{STRONGEST.title}</b><span className="strong-tag"><Icon name="check" size={14} />{STRONGEST.note}</span></div>
+        <div className="strong-h"><Badge name="target" size={20} /><b>{STRONGEST.title}</b></div>
         <div className="strong-g">
-          {STRONGEST.items.map((x, i) => (
-            <div className="strong-i" key={x[1]} style={{ animationDelay: `${i * 80}ms` }}><Badge name={x[0]} size={18} /><span><b>{x[1]}</b><small>{x[2]}</small></span></div>
+          {STRONGEST.groups.map((g, i) => (
+            <div className={`strong-i${"note" in g ? " hi" : ""}`} key={g.name} style={{ animationDelay: `${i * 80}ms` }}>
+              <div className="strong-n"><Badge name={g.icon} size={18} /><b>{g.name}</b>{"note" in g && <span className="strong-tag">{g.note}</span>}</div>
+              <ul className="tick">{g.items.map((x) => <li key={x}>{x}</li>)}</ul>
+            </div>
           ))}
         </div>
       </div>

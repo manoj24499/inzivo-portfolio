@@ -786,3 +786,24 @@ footer.foot .logo { color: var(--ink); }
 #status .chip { font-size: 14px; }
 #roadmap ul.tick li::before { top: 0.25em; }
 #roadmap ul.tick li::after { top: calc(0.25em + 4.5px); }
+
+.strong-g { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.strong-i { display: grid; gap: 8px; align-content: start; }
+.strong-i.hi { border-color: var(--accent); background: var(--accent-soft); }
+.strong-n { display: flex; align-items: center; gap: 10px; }
+.strong-n b { font: 700 16px var(--f-display); }
+.strong-i .strong-tag { margin-left: 0; justify-self: start; font-size: 12px; padding: 3px 10px; }
+.strong-i ul.tick { gap: 5px; }
+.strong-i ul.tick li { font-size: 13.5px; line-height: 1.35; padding-left: 24px; }
+.strong-i ul.tick li::before { top: 0.15em; width: 14px; height: 14px; }
+.strong-i ul.tick li::after { top: calc(0.15em + 4px); left: 3.5px; }
+.strong-n { flex-wrap: wrap; }
+.strong-i .strong-tag { margin-left: auto; white-space: nowrap; }
+@media (max-height: 800px) and (min-width: 901px) {
+  #competitors .comp-n { display: none; }
+  .strong-i { padding: 9px 12px; gap: 6px; }
+}
+.strong-i .strong-tag { font-size: 11.5px; padding: 2px 9px; line-height: 1.5; }
+@media (max-height: 800px) and (min-width: 901px) {
+  #competitors .lede { display: none; }
+}
