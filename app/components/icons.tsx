@@ -68,7 +68,7 @@ export function Badge({ name, size = 20 }: { name: IconName; size?: number }) {
 /* Icon for each titled item in the content, so data files stay plain text. */
 const BY_TITLE: Record<string, IconName> = {
   // overview
-  "Admin Dashboard": "monitor", "Employee Web App": "globe", "Mobile App": "phone",
+  "Admin dashboard": "monitor", "Employee web app": "globe", "Mobile app": "phone",
   // problems
   "Attendance is hard to manage": "file", "No clear proof of attendance": "eye", "Field employees are difficult to track": "route",
   "Working hours can be incorrect": "clock", "Travel expenses are difficult to calculate": "money", "Different teams use different systems": "layers",

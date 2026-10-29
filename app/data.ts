@@ -3,17 +3,17 @@ export const NAV = [
   ["problems", "Problems"],
   ["capabilities", "Capabilities"],
   ["industries", "Industries"],
+  ["competitors", "Competitors"],
   ["numbers", "Numbers"],
   ["security", "Security"],
   ["status", "Status"],
-  ["competitors", "Competitors"],
   ["roadmap", "Roadmap"],
 ] as const;
 
 export const OVERVIEW = [
-  { name: "Admin Dashboard", who: "Owners, HR and managers", where: "Any desktop browser", tag: "Web console", list: ["Live team dashboard and alerts", "People, shifts, offices and settings", "Approve leave, overtime and permissions", "Manual entries for missed days", "Field maps, routes and assigned places", "Excel and CSV reports, API keys"] },
-  { name: "Employee Web App", who: "Every employee", where: "Any browser, same sign-in as the app", tag: "My Page", list: ["Today's status and time so far", "Hours over the last 7 days", "Late marks this month and average start time", "Recent activity and an attendance calendar", "Change PIN and sign out", "View-only: check in with the app or kiosk"] },
-  { name: "Mobile App", who: "Employees, especially field staff", where: "Android phones and iPhones", platforms: ["Android", "iOS"], tag: "Android and iOS", list: ["Check in and out with selfie, PIN and face match", "Leave, overtime and permission requests", "Background tracking and live working time", "Today's places with turn-by-turn navigation", "Visit log with photo, contact and remarks", "Reminders and alerts"] },
+  { name: "Admin dashboard", who: "Owners, HR and managers", where: "Any desktop browser", tag: "Web console", list: ["Live team dashboard and alerts", "People, shifts, offices and settings", "Approve leave, overtime and permissions", "Manual entries for missed days", "Field maps, routes and assigned places", "Excel and CSV reports, API keys"] },
+  { name: "Employee web app", who: "Every employee", where: "Any browser, same sign-in as the app", tag: "My Page", list: ["Today's status and time so far", "Hours over the last 7 days", "Late marks this month and average start time", "Recent activity and an attendance calendar", "Change PIN and sign out", "View-only: check in with the app or kiosk"] },
+  { name: "Mobile app", who: "Employees, especially field staff", where: "Android phones and iPhones", platforms: ["Android", "iOS"], tag: "Android and iOS", list: ["Check in and out with selfie, PIN and face match", "Leave, overtime and permission requests", "Background tracking and live working time", "Today's places with turn-by-turn navigation", "Visit log with photo, contact and remarks", "Reminders and alerts"] },
 ];
 
 export const PROBLEMS = [
@@ -32,7 +32,7 @@ export const INDUSTRIES = [
   { name: "Maintenance", who: "Facility, AMC and equipment teams on scheduled rounds", features: ["Shifts per weekday for planned service rounds", "Service visits recorded with site photos as proof", "Overtime requests with a work summary and photo", "Tracking-stopped alerts if a phone goes silent", "Manual entry for a missed day, with audit trail"] },
   { name: "Collections and recovery", who: "Banks and lenders with agents visiting customers", features: ["Every visit stamped with place, time and photo", "Contact person and remarks recorded per visit", "Day's route with numbered stops for review", "Fake-GPS blocked and face-verified check-in", "Excel report of up to 31 days for audits"] },
   { name: "Surveys and research", who: "Agencies with enumerators in towns and villages", features: ["Survey points assigned on the map", "Offline check-in in low-signal areas, synced later", "Visit log with photo and respondent contact", "Places covered and distance for each day", "Light on data: under 1 MB a day for tracking"] },
-  { name: "Logistics and delivery", who: "Delivery staff and drivers on the road all day", features: ["Live route tracking with 10-second GPS points", "Distance within 98.4% of the vehicle odometer", "Start and end km; estimate if a reading is missed", "Rate per km, adjustable per person and day", "Alerts when a phone stops sending location"] },
+  { name: "Logistics and delivery", who: "Delivery staff and drivers on the road all day", features: ["Live route tracking with 10-second GPS points", "Distance within 99.6% of the vehicle odometer", "Start and end km; estimate if a reading is missed", "Rate per km, adjustable per person and day", "Alerts when a phone stops sending location"] },
   { name: "Contract and customer-site staff", who: "Security, housekeeping and staff deployed at client sites", features: ["Face match stops proxy attendance", "Live-face check blocks a photo of another person", "Shared kiosk check-in screen at the site", "Shift reminders and automatic check-out", "One face can belong to only one employee ID"] },
   { name: "Hybrid offices", who: "IT and corporate offices mixing on-site and remote work", features: ["Office area and a home location for each person", "Choose Home or Office each day", "Leave, overtime and permissions in the app", "My Page web view of hours and calendar", "Excel and CSV exports for payroll"] },
 ];
@@ -49,7 +49,7 @@ export const CONSOLE_CALLOUTS = [
 export const STATS = [
   ["AI", "Face verification", "Each check-in selfie is matched to the enrolled face; a liveness check blocks photos of another person."],
   ["< 1 MB", "Mobile data a day", "Tracking for a full eight-hour field day."],
-  ["99%", "Distance accuracy", "Measured at 98.4% against the vehicle odometer on a 135 km field trip."],
+  ["99.6%", "Distance accuracy", "Measured at 99.6% against the vehicle odometer on a 135 km field trip (134.5 km by GPS)."],
   ["10 s", "Field-worker tracking", "A GPS point every 10 seconds, sent in batches, records the true road route."],
   ["2 min", "Office and WFH staff", "Live location every 2 minutes for checked-in office and work-from-home staff, with low battery use."],
   ["Geofence", "Check-in zones", "Office and home staff check in within a set radius; working time pauses if they leave it."],
@@ -115,7 +115,7 @@ export const DELIVERED = [
   ["Admin", "Shift weekdays and bulk assignment"],
   ["Design", "Refreshed admin console design and kiosk screen"],
   ["Business", "Payment gateway for plan sign-up"],
-  ["Business", "Verified e-mail sending domain"],
+  ["Business", "Verified email sending domain"],
   ["Security", "Live on AWS with security hardening in place"],
   ["Field", "Offline check-in that syncs when the signal returns"],
   ["Security", "Live-face check to block photos of another person"],

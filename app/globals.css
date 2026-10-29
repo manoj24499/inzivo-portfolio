@@ -780,3 +780,9 @@ footer.foot .logo { color: var(--ink); }
   #competitors { padding-block: 76px 24px; }
   #competitors .fine { margin-top: 8px; }
 }
+
+/* Status and Roadmap body text matches the other slides (about 14.5px) */
+#status .item, #roadmap ul.tick li { font-size: 14.5px; line-height: 1.45; }
+#status .chip { font-size: 14px; }
+#roadmap ul.tick li::before { top: 0.25em; }
+#roadmap ul.tick li::after { top: calc(0.25em + 4.5px); }

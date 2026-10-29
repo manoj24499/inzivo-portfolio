@@ -86,8 +86,8 @@ function Tabs({ items, value, onChange, bind }: { items: string[]; value: number
   );
 }
 
-const SLIDE_IDS = ["top", "overview", "problems", "capabilities", "calculator", "flow", "industries", "numbers", "security", "reliability", "status", "competitors", "roadmap"];
-const PARENT: Record<string, string> = { calculator: "capabilities", reliability: "security" };
+const SLIDE_IDS = ["top", "overview", "problems", "capabilities", "flow", "calculator", "industries", "competitors", "numbers", "security", "reliability", "status", "roadmap"];
+const PARENT: Record<string, string> = { flow: "capabilities", calculator: "capabilities", reliability: "security" };
 
 /* Dots on the right edge: one per slide, click to jump. */
 export function SlideDots() {
@@ -167,7 +167,7 @@ export function Hero() {
               <a className="btn" href="#flow">See a day&apos;s flow <Icon name="arrow" size={18} /></a>
               <a className="btn ghost" href="#capabilities"><Icon name="monitor" size={18} /> Explore capabilities</a>
             </div>
-            <div className="meta">PREPARED BY THE INZIVO TEAM</div>
+            <div className="meta">Prepared by the Inzivo team</div>
           </div>
           <div className="hero-art" aria-hidden={false}>
             <div className="ph a"><Phone n={3} alt="Today's places screen listing four stops, nearest first" priority /></div>
@@ -175,10 +175,10 @@ export function Hero() {
           </div>
         </div>
         <div className="strip">
-          <div><Icon name="gauge" size={22} /><b>99%</b><span>distance accuracy on a 135 km trip</span></div>
-          <div><Icon name="route" size={22} /><b>10 s</b><span>between GPS points for field staff</span></div>
-          <div><Icon name="download" size={22} /><b>&lt; 1 MB</b><span>mobile data per field day</span></div>
-          <div><Icon name="face" size={22} /><b>AI</b><span>face check on every check-in</span></div>
+          <div><Icon name="gauge" size={22} /><b>99.6%</b><span>Distance accuracy on a 135 km trip</span></div>
+          <div><Icon name="route" size={22} /><b>10 s</b><span>Between GPS points for field staff</span></div>
+          <div><Icon name="download" size={22} /><b>&lt; 1 MB</b><span>Mobile data per field day</span></div>
+          <div><Icon name="face" size={22} /><b>AI</b><span>Face check on every check-in</span></div>
         </div>
       </div>
     </header>
@@ -190,12 +190,12 @@ export function Overview() {
   const { i, setI, bind } = c;
   const d = OVERVIEW[i];
   const img =
-    d.name === "Admin Dashboard" ? (
+    d.name === "Admin dashboard" ? (
       <div className="browser">
         <div className="browser-bar"><i /><i /><i /></div>
         <Image src="/screens/cover.jpg" alt="Admin dashboard with alerts and team totals" width={1900} height={1372} sizes="(max-width: 900px) 100vw, 640px" />
       </div>
-    ) : d.name === "Employee Web App" ? (
+    ) : d.name === "Employee web app" ? (
       <div className="browser light">
         <div className="browser-bar"><i /><i /><i /></div>
         <MyPageMock />

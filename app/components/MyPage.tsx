@@ -34,8 +34,8 @@ export function MyPageMock() {
       <div className="mp-stats">
         <div><small>Today</small><b className="mp-on">Checked in</b><span>since 09:08 AM</span></div>
         <div><small>Time so far</small><b>02:33:18</b><span>Work from home</span></div>
-        <div><small>Late marks</small><b>2</b><span>this month</span></div>
-        <div><small>Average start</small><b>09:14</b><span>this month</span></div>
+        <div><small>Late marks</small><b>2</b><span>This month</span></div>
+        <div><small>Average start</small><b>09:14</b><span>This month</span></div>
       </div>
       <div className="mp-main">
         <div className="mp-col">
