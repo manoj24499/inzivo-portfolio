@@ -2,14 +2,10 @@ export const NAV = [
   ["overview", "Overview"],
   ["problems", "Problems"],
   ["capabilities", "Capabilities"],
+  ["payroll", "Payroll"],
   ["industries", "Industries"],
   ["numbers", "Numbers"],
   ["security", "Security"],
-  ["status", "Status"],
-  ["competitors", "Competitors"],
-  ["pricing", "Pricing"],
-  ["roadmap", "Roadmap"],
-  ["costing", "Costing"],
 ] as const;
 
 export const OVERVIEW = [
@@ -23,18 +19,17 @@ export const PROBLEMS = [
   ["No Clear Proof of Attendance", "Managers may not know whether employees checked in at the correct place or arrived on time.", "Know who checked in and where", "Managers can view employee attendance and check-in details from the admin dashboard."],
   ["Field Employees Are Difficult to Track", "Once employees leave the office, managers cannot easily see where they went, which places they visited or how far they travelled.", "Track field visits and travel", "View field workers' routes, visited places, travel distance and visit records from one place."],
   ["Working Hours Can Be Incorrect", "Forgotten check-outs and missing records make it difficult to calculate the correct working hours.", "Automatic attendance management", "Reminders and automatic check-out help reduce missed check-outs and incorrect working-hour records."],
-  ["Travel Expenses Are Difficult to Calculate", "Managers often depend on employees' travel reports to calculate kilometres and travel reimbursements.", "Calculate travel distance and reimbursement", "Use GPS distance and odometer readings to help calculate travel kilometres and reimbursement."],
   ["Different Teams Use Different Systems", "Office, work-from-home and field employees may use different methods to record attendance, making everything harder to manage.", "One platform for every work mode", "Manage office, work-from-home and field employees through one application and admin dashboard."],
 ];
 
 export const INDUSTRIES = [
-  { name: "FMCG and Consumer Goods", who: "Sales reps who visit dozens of shops a day", features: ["Today's shops assigned, sorted nearest-first", "Turn-by-turn navigation inside the app", "Visit log per shop: photo, contact person, order remarks", "Full route, km and time spent at each outlet", "Travel claims from odometer and GPS km"] },
+  { name: "FMCG and Consumer Goods", who: "Sales reps who visit dozens of shops a day", features: ["Today's shops assigned, sorted nearest-first", "Turn-by-turn navigation inside the app", "Visit log per shop: photo, contact person, order remarks", "Full route, km and time spent at each outlet"] },
   { name: "Pharma Sales", who: "Medical reps calling on doctors, chemists and hospitals", features: ["Planned call list of doctors and chemists", "Proof of every call: place, time, photo, contact", "Time spent at each call, arrival and departure", "Fake-GPS apps blocked, so visits are genuine", "Excel reports for area and regional managers"] },
-  { name: "Field Service", who: "Installation and repair technicians at customer homes and sites", features: ["Assign the day's jobs as places on the map", "Navigation to each customer address", "Arrival time and time on site measured", "Job photos and remarks logged at each visit", "Distance-based travel reimbursement"] },
+  { name: "Field Service", who: "Installation and repair technicians at customer homes and sites", features: ["Assign the day's jobs as places on the map", "Navigation to each customer address", "Arrival time and time on site measured", "Job photos and remarks logged at each visit"] },
   { name: "Maintenance", who: "Facility, AMC and equipment teams on scheduled rounds", features: ["Shifts per weekday for planned service rounds", "Service visits recorded with site photos as proof", "Overtime requests with a work summary and photo", "Tracking-stopped alerts if a phone goes silent", "Manual entry for a missed day, with audit trail"] },
   { name: "Collections and Recovery", who: "Banks and lenders with agents visiting customers", features: ["Every visit stamped with place, time and photo", "Contact person and remarks recorded per visit", "Day's route with numbered stops for review", "Fake-GPS blocked and face-verified check-in", "Excel report of up to 31 days for audits"] },
   { name: "Surveys and Research", who: "Agencies with enumerators in towns and villages", features: ["Survey points assigned on the map", "Offline check-in in low-signal areas, synced later", "Visit log with photo and respondent contact", "Places covered and distance for each day", "Light on data: under 1 MB a day for tracking"] },
-  { name: "Logistics and Delivery", who: "Delivery staff and drivers on the road all day", features: ["Live route tracking with 10-second GPS points", "Distance within 99.6% of the vehicle odometer", "Start and end km; estimate if a reading is missed", "Rate per km, adjustable per person and day", "Alerts when a phone stops sending location"] },
+  { name: "Logistics and Delivery", who: "Delivery staff and drivers on the road all day", features: ["Live route tracking with 10-second GPS points", "Distance within 99.6% of the vehicle odometer", "Start and end km; estimate if a reading is missed", "Alerts when a phone stops sending location"] },
   { name: "Contract and Customer-Site Staff", who: "Security, housekeeping and staff deployed at client sites", features: ["Face match stops proxy attendance", "Live-face check blocks a photo of another person", "Shared kiosk check-in screen at the site", "Shift reminders and automatic check-out", "One face can belong to only one employee ID"] },
   { name: "Hybrid Offices", who: "IT and corporate offices mixing on-site and remote work", features: ["Office area and a home location for each person", "Choose Home or Office each day", "Leave, overtime and permissions in the app", "My Page web view of hours and calendar", "Excel and CSV exports for payroll"] },
 ];
@@ -59,7 +54,6 @@ export const STATS = [
   ["Offline", "Data Sync", "Check-ins and GPS route points are stored on the phone and synced when the signal returns."],
   ["5 min", "Automatic Checks", "Every five minutes the system alerts employees and admins: shift reminders, silent field-worker alerts, auto check-out if forgotten."],
   ["After shift", "Check-Out Reminder", "Then checked out automatically at the shift end time."],
-  ["Distance", "Travel Reimbursement", "Calculated from GPS distance and odometer readings."],
   ["3", "Work Modes", "Office, work from home and field, each with its own rules."],
   ["15 s", "Live Requests", "New requests appear live; approve in one tap."],
   ["500+", "Bulk Upload", "Add a whole team from one spreadsheet."],
@@ -69,7 +63,7 @@ export const STATS = [
 export const CAPABILITIES: Record<string, string[]> = {
   Administrators: ["Live dashboard: who is working, late, on leave or not in yet", "Add people one by one, or up to 500 at once from a spreadsheet", "Shifts per weekday, with office and home locations and geofence radius", "Approve leave, overtime and short permissions in one tap", "Manual entries: record a day the phone missed, with a reason and an audit trail", "Alerts centre for stopped tracking and missed face checks", "Excel and CSV reports, plus a public API with keys"],
   Employees: ["Check in and out with a photo, PIN and face check", "See working time, leave balance, history and weekly hours", "Request leave, overtime or a short permission, and report an issue with a screenshot", "Reminders before the shift and when a check-in is missed", "Automatic check-out if they forget at the end of the shift", "My Page on the web: status, weekly hours, late marks and a calendar", "Biometric unlock, profile photo and change-PIN in the app"],
-  "Field Teams": ["Background tracking of the route, distance and places visited", "Log each visit with photo, contact person and remarks", "Assigned places in nearest-first order, with turn-by-turn directions in the app", "Odometer start and end, and reimbursement worked out from distance", "Offline check-in when there is no signal, synced later", "Nearby shops, schools and restaurants on the map", "Automatic switch between Field and Office when they reach the office"],
+  "Field Teams": ["Background tracking of the route, distance and places visited", "Log each visit with photo, contact person and remarks", "Assigned places in nearest-first order, with turn-by-turn directions in the app", "Odometer start and end readings, with distance worked out from GPS", "Offline check-in when there is no signal, synced later", "Nearby shops, schools and restaurants on the map", "Automatic switch between Field and Office when they reach the office"],
 };
 
 export const APP_SCREENS = [
@@ -92,43 +86,6 @@ export const SECURITY = [
   ["Integrations", "API keys are stored hashed, payment webhooks are signature-checked, and the scheduler is protected by a secret."],
   ["Kept Current", "Dependencies audited and patched, with critical findings closed in October 2026."],
 ];
-
-export const RELIABILITY = [
-  ["Hosting", "AWS in the Mumbai region behind nginx, with the app under a process manager that restarts it automatically."],
-  ["Database", "Managed PostgreSQL with connection pooling and per-process connection limits."],
-  ["Face Verification", "Runs on the same server as a boot-time service. If it is ever unavailable, check-ins continue and are flagged for review instead of blocking work."],
-  ["Fast Face Checks", "The model is loaded once and face work runs in parallel, so one slow check never holds up the others."],
-  ["Health Endpoint", "Reports database and face-service status for monitoring."],
-  ["Scheduler", "Runs every 5 minutes for auto check-out, shift reminders and tracking-stopped alerts."],
-  ["Offline Check-In", "Check-ins and unsent location points are kept on the phone and synced when the signal returns."],
-  ["Phone Settings", "The app guides battery and location settings so tracking survives."],
-  ["Live Admin Screens", "New requests and alerts appear within about 15 seconds."],
-];
-
-export const DELIVERED = [
-  ["Platform", "Admin web console, Android and iOS app, employee web app (My Page), shared kiosk and public API"],
-  ["Platform", "Office, work-from-home and field workflows"],
-  ["Security", "Face-verified check-in and geofencing"],
-  ["Field", "Live field tracking, visit logging and assigned places with in-app navigation"],
-  ["Automation", "Automatic check-out, reminders and alerts"],
-  ["Reports", "Excel and CSV reports"],
-  ["Admin", "Manual attendance entries with approval and an audit trail"],
-  ["Admin", "Permissions history and a live view of who is on permission"],
-  ["Admin", "Shift weekdays and bulk assignment"],
-  ["Design", "Refreshed admin console design and kiosk screen"],
-  ["Business", "Payment gateway for plan sign-up"],
-  ["Business", "Verified email sending domain"],
-  ["Security", "Live on AWS with security hardening in place"],
-  ["Field", "Offline check-in that syncs when the signal returns"],
-  ["Security", "Live-face check to block photos of another person"],
-];
-
-export const ROADMAP: Record<string, string[]> = {
-  "Check-In and Locations": ["Multiple office and site locations, each with its own check-in radius", "Shift rotation and open shifts that staff can pick up"],
-  "Field Work": ["Forms and checklists to complete at each assigned place", "Live map of the whole field team at once", "Refinement of field tracking and the live map"],
-  "Admin and Integrations": ["Timesheets and hours per job or project", "Single sign-on and two-factor sign-in for admins"],
-  "Employee App": ["Availability alerts during the shift: ask the employee to confirm they are available at set times", "Expense claims with photos: tolls, parking, meals", "Request a missed day to be added from the app"],
-};
 
 /* Employee flow per work mode. `shot` is a real app screenshot (screen-N.jpg) that matches the step. */
 export type FlowStep = { icon: string; title: string; text: string; shot?: number };
@@ -161,37 +118,56 @@ export const FLOWS: { mode: string; icon: string; steps: FlowStep[] }[] = [
       { icon: "check", title: "Arrival Detected", text: "Arrival is detected at each stop and the time on site is measured." },
       { icon: "camera", title: "Log the Visit", text: "Photo, contact person and remarks for every visit, or skip the place with a reason." },
       { icon: "route", title: "Tracked on the Road", text: "A GPS point every 10 seconds, kept on the phone and synced when the signal returns." },
-      { icon: "money", title: "Check Out and Claim", text: "Enter the end odometer reading. Distance and reimbursement are worked out from GPS and odometer." },
+      { icon: "check", title: "Check Out", text: "Enter the end odometer reading. Distance is worked out from GPS and odometer." },
     ],
   },
 ];
 
-export const COMPETITORS = [
-  ["Keka", "India", "HRMS + attendance + payroll"],
-  ["greytHR", "India", "HRMS + attendance + payroll"],
-  ["Zoho People", "India / Global", "HRMS + attendance + leave"],
-  ["Truein", "India", "Attendance + workforce management"],
-  ["factoHR", "India", "HRMS + attendance + payroll"],
-  ["Darwinbox", "India / Global", "Enterprise HRMS + attendance"],
-  ["Connecteam", "Global", "Employee management + time clock + scheduling"],
-  ["Jibble", "Global", "Attendance + time tracking"],
-  ["Hubstaff", "Global", "Time tracking + GPS and workforce monitoring"],
-  ["Deputy", "Global", "Employee scheduling + attendance"],
-] as const;
-
-export const STRONGEST = {
-  title: "Where Inzivo Is Strongest",
-  groups: [
-    { name: "Field Teams", icon: "truck", note: "Not listed by any competitor", items: ["Route map of the full day", "Visit log with photo", "Odometer-based reimbursement", "Assigned places with in-app directions"] },
-    { name: "Office and Remote Teams", icon: "building", items: ["Face match and live-face check on every check-in", "Geofence check-in; working time pauses outside the area", "Fake-GPS apps detected and rejected", "Automatic check-out and shift reminders"] },
-    { name: "Admins and Managers", icon: "monitor", items: ["One platform for office, home and field", "Approve leave, overtime and permissions in one tap", "Add 500+ people from one spreadsheet", "Alerts for stopped tracking and missed face checks"] },
-  ],
-} as const;
-
 /* Competitor list prices as supplied. `perUser` is the approximate monthly cost per user for a 100-employee team. */
-export const PRICING = [
-  { name: "greytHR", plan: "GPS Live Tracking (add-on)", price: "₹140 a user a month", terms: "Growth and Premium plans only", adds: "Live location of field staff", source: "Official", perUser: 140, flag: "Add-on only, on top of the base plan" },
-  { name: "Keka", plan: "Growth", price: "₹15,999 a month", terms: "First 100 employees, then ₹150 per extra employee", adds: "Adds advanced shift rules", source: "Third-party", perUser: 160 },
-  { name: "Zoho People", plan: "Enterprise", price: "₹192 a user a month", terms: "Billed yearly, excluding 18% GST", adds: "", source: "Third-party", perUser: 192, flag: "Other sources show ₹300+: needs verification" },
-  { name: "Connecteam", plan: "Expert", price: "About ₹9,550 a month", terms: "First 30 users, then about ₹405 per extra user", adds: "Adds unlimited geofence sites and API access", source: "Official (converted)", perUser: 379 },
-] as const;
+
+/* Payroll module: feature groups, each card tagged Built, Partly built or Not started. */
+export type PayStatus = "Built" | "Partly built" | "Not started";
+export const PAYROLL_FLOW = [
+  ["Set Up Company", "Entities, branches, tax rules"],
+  ["Add Employees", "Profiles and documents"],
+  ["Run Payroll", "Attendance in, salaries out"],
+  ["Issue Payslips", "PDF, email, self-service"],
+  ["Notify", "Alerts and announcements"],
+];
+export const PAYROLL: { group: string; icon: string; cards: { title: string; status: PayStatus; points: string[] }[] }[] = [
+  { group: "Company Setup", icon: "building", cards: [
+    { title: "Organisation", status: "Built", points: ["Company, legal entities, branches", "Departments and work locations", "State registrations per entity"] },
+    { title: "Tax and Statutory Rules", status: "Built", points: ["PF, ESI, PT, TDS, US federal and more", "Stored as editable, versioned data", "A platform checker approves before use"] },
+    { title: "Custom Fields", status: "Built", points: ["Country IDs like PAN, Aadhaar, SSN", "Added per country, no code change"] },
+    { title: "ID Formats", status: "Built", points: ["Auto-fills the next employee ID", "Same for document numbers", "HR can override"] },
+  ] },
+  { group: "Employees", icon: "users", cards: [
+    { title: "Employee Records", status: "Built", points: ["Step-by-step add-employee wizard", "Full profile with salary and payslip tabs", "History of status changes"] },
+    { title: "Documents Wallet", status: "Built", points: ["One place for every employee document", "Required-document checklist", "Expiry alerts at 30, 7 and 0 days"] },
+    { title: "Exits", status: "Partly built", points: ["Resignation, manager and HR approval", "Last day, notice waiver, clearance checklist", "Coming: full and final settlement"] },
+  ] },
+  { group: "Payroll", icon: "money", cards: [
+    { title: "Attendance Sync", status: "Built", points: ["Pulls attendance, leave and holidays", "Fills loss-of-pay days automatically", "Daily sync or on demand"] },
+    { title: "Salary Engine", status: "Built", points: ["Components and salary templates", "Overtime, new-joiner pro-rating", "Income tax and deductions, gross to net"] },
+    { title: "Pay Cycles", status: "Built", points: ["Enter inputs, review salary register", "Finalize to lock the cycle", "Reopen only before payslips go out"] },
+    { title: "Payslips", status: "Built", points: ["PDF on your company letterhead", "Choose what each payslip shows", "Sensitive IDs can be masked"] },
+    { title: "Email Payslips", status: "Built", points: ["Send to all employees in one go", "See which emails were delivered", "Resend the failed ones"] },
+  ] },
+  { group: "HR Documents", icon: "file", cards: [
+    { title: "Letterheads", status: "Built", points: ["Design one in the app", "Upload your own", "Or let AI design it"] },
+    { title: "Offer and Appointment Letters", status: "Built", points: ["Candidates and letter templates", "Candidates sign online, no login needed"] },
+    { title: "Relieving and Experience Letters", status: "Not started", points: ["Issued at the end of an exit"] },
+    { title: "Appraisals and Certificates", status: "Not started", points: ["Planned for a later stage"] },
+  ] },
+  { group: "Self-Service", icon: "user", cards: [
+    { title: "My Payslips and Letters", status: "Built", points: ["View and download payslips", "View their own letters"] },
+    { title: "My Documents", status: "Built", points: ["Upload documents", "HR reviews and verifies them"] },
+    { title: "My Requests", status: "Built", points: ["Request changes to personal details", "Submit or withdraw resignation"] },
+  ] },
+  { group: "Notifications", icon: "bell", cards: [
+    { title: "Notification Bell", status: "Built", points: ["Payslip ready, approvals waiting", "Expiring documents, sync failures", "Reminders after 2 days of no action"] },
+    { title: "Announcements", status: "Built", points: ["Company-wide banners", "Daily summary email"] },
+    { title: "Mobile Push", status: "Not started", points: ["Push alerts on phones"] },
+  ] },
+];
+export const PAYROLL_ROLES = ["Admin", "HR", "Payroll Admin", "Manager", "Finance", "Auditor", "Employee"];

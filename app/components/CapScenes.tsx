@@ -43,7 +43,7 @@ const SCENES: Scene[][] = [
     { k: "map", head: "Route tracked", path: true, pins: [[90, 100, "Stop 1", "pin"], [180, 50, "Stop 2", "pin"], [270, 110, "Stop 3", "pin"]], stats: [["Distance", "12.4 km"], ["Places", "3"]] },
     { k: "rows", head: "Visit log", rows: [["camera", "Photo", "Shop front", "Saved"], ["user", "Contact person", "R. Kumar", "Saved"], ["edit", "Remarks", "Samples delivered", "Saved"]] },
     { k: "rows", head: "Today's places", rows: [["pin", "Bright Star Traders", "1.2 km away", "Next"], ["pin", "Metro Hardware", "2.8 km away"], ["pin", "Sunrise Pharmacy", "4.1 km away"]] },
-    { k: "odo", head: "Odometer and reimbursement" },
+    { k: "odo", head: "Odometer and distance" },
     { k: "rows", head: "No signal", rows: [["offline", "Check-in saved on the phone", "No signal", "Saved"], ["pin", "14 location points waiting", "Kept on the phone", "Waiting", "Waiting"], ["refresh", "Signal is back", "Sending to the server", "Syncing", "Synced"]] },
     { k: "map", head: "Nearby", path: false, pins: [[70, 70, "Shop", "store"], [150, 120, "School", "building"], [220, 60, "Cafe", "store"], [250, 130, "Pharmacy", "pill"]] },
     { k: "rows", head: "Switching mode", rows: [["truck", "Field work", "On the road", "Field", "Field"], ["building", "Reached the office", "Inside the office area", "Arrived"], ["check", "Switched to Office", "No action needed", "Office"]] },
@@ -122,7 +122,6 @@ export function CapScene({ role, cap }: { role: number; cap: number }) {
           <div style={at(1)}><span>End</span><b>12,775</b></div>
           <div style={at(2)}><span>Odometer</span><b>135 km</b></div>
           <div style={at(3)}><span>GPS distance</span><b>134.5 km</b></div>
-          <div className="pay" style={at(4)}><span>Reimbursement at ₹3 per km</span><b>₹403.5</b></div>
         </div>
       );
       break;

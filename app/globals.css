@@ -877,3 +877,32 @@ footer.foot .logo { color: var(--ink); }
   .pr-r { padding: 10px 20px; }
 }
 @media (prefers-reduced-motion: reduce) { .pr-r { animation: none; } }
+
+/* payroll */
+.pay-flow { list-style: none; counter-reset: step; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin: 26px 0 0; padding: 0; }
+.pay-flow li { counter-increment: step; position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 12px 12px 46px; min-width: 0; }
+.pay-flow li::before { content: counter(step); position: absolute; left: 12px; top: 12px; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font: 700 12px var(--f-body); display: grid; place-items: center; }
+.pay-flow b { display: block; font-weight: 600; font-size: 15px; }
+.pay-flow small { display: block; color: var(--muted); font-size: 13px; line-height: 1.35; margin-top: 2px; }
+.pay-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+.pay-grid .panel { padding: 20px 22px; }
+.pay-grid .panel h3 { font-size: 17px; margin-bottom: 10px; justify-content: space-between; align-items: flex-start; }
+.pay-grid ul.tick li { font-size: 14.5px; line-height: 1.45; }
+.pay-grid ul.tick li::before { top: 0.25em; }
+.pay-grid ul.tick li::after { top: calc(0.25em + 4.5px); }
+.pill { display: inline-flex; align-items: center; gap: 6px; font: 600 11.5px var(--f-body); padding: 3px 10px; border-radius: 999px; white-space: nowrap; flex: none; }
+.pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.pill.ok { color: #1f7a3d; background: #e3f6ea; }
+.pill.part { color: #a9701f; background: #fbf1e3; }
+.pill.off { color: #6f7480; background: #f0f1f4; }
+.pay-roles { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 20px; font-size: 14px; }
+.pay-roles b { font-weight: 600; margin-right: 4px; }
+.pay-roles span { background: var(--accent-soft); color: var(--accent-text); font-weight: 600; font-size: 13px; padding: 4px 12px; border-radius: 999px; }
+@media (max-width: 900px) { .pay-flow { grid-template-columns: 1fr; } }
+@media (min-width: 901px) and (min-height: 640px) {
+  .pay-flow { margin-top: 2.2vh; }
+  .pay-grid .panel { padding: clamp(12px, 2vh, 20px) 22px; }
+  .pay-grid ul.tick { gap: clamp(4px, 0.9vh, 10px); }
+  .pay-grid ul.tick li { font-size: clamp(13px, 1.7vh, 14.5px); }
+  .pay-roles { margin-top: 1.8vh; }
+}

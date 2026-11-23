@@ -104,7 +104,6 @@ export const SCREENS: Record<string, Screen> = {
   ] },
   "2:6": { eyebrow: DAY, title: "Check out", nav: 1, blocks: [
     { t: "form", rows: [["Odometer start", "12,640"], ["Odometer end", "12,775"], ["Distance", "135 km"]] },
-    { t: "notice", icon: "money", title: "Reimbursement", text: "Worked out from GPS distance and the odometer readings." },
     { t: "btn", label: "Check out" },
   ] },
 };

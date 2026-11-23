@@ -1,9 +1,9 @@
 import {
-  Calculator, Capabilities, Competitors, Costing, Flow, Hero, Industries, Numbers,
-  Overview, Pricing, Problems, Roadmap, Security, SlideDots, Status, TopNav,
+  Capabilities, Flow, Hero, Industries, Numbers,
+  Overview, Payroll, Problems, Security, SlideDots, TopNav,
 } from "./components/Sections";
 
-/* Story order: what it is, why it is needed, what each group gets, how it works, who it fits, proof, trust, status, then the market, price and cost, and what is next. */
+/* Story order: what it is, why it is needed, what each group gets, how it works, who it fits, proof, and trust. */
 export default function Home() {
   return (
     <>
@@ -14,15 +14,10 @@ export default function Home() {
       <Problems />
       <Capabilities />
       <Flow />
-      <Calculator />
+      <Payroll />
       <Industries />
       <Numbers />
       <Security />
-      <Status />
-      <Competitors />
-      <Pricing />
-      <Roadmap />
-      <Costing />
     </>
   );
 }

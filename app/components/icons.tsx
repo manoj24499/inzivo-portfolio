@@ -71,7 +71,7 @@ const BY_TITLE: Record<string, IconName> = {
   "Admin Dashboard": "monitor", "Employee Web App": "globe", "Mobile App": "phone",
   // problems
   "Attendance Is Hard to Manage": "file", "No Clear Proof of Attendance": "eye", "Field Employees Are Difficult to Track": "route",
-  "Working Hours Can Be Incorrect": "clock", "Travel Expenses Are Difficult to Calculate": "money", "Different Teams Use Different Systems": "layers",
+  "Working Hours Can Be Incorrect": "clock", "Different Teams Use Different Systems": "layers",
   // console callouts
   "Approve in One Tap": "check", "Missed Face Checks": "face", "Tracking Stopped": "offline", "Who Is Working Now": "users", "Today at a Glance": "activity",
   // industries
@@ -80,7 +80,7 @@ const BY_TITLE: Record<string, IconName> = {
   // stats
   "Face Verification": "face", "Mobile Data a Day": "download", "Distance Accuracy": "gauge", "Field-Worker Tracking": "route", "Office and WFH Staff": "clock",
   "Check-In Zones": "target", "Location Security": "shield", "Data Sync": "refresh", "Automatic Checks": "zap", "Check-Out Reminder": "bell",
-  "Travel Reimbursement": "money", "Work Modes": "layers", "Live Requests": "activity", "Bulk Upload": "upload", "Photo Retention": "camera",
+  "Work Modes": "layers", "Live Requests": "activity", "Bulk Upload": "upload", "Photo Retention": "camera",
   // capabilities
   Administrators: "monitor", Employees: "user", "Field Teams": "truck",
   // app screens
