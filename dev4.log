@@ -1,0 +1,32 @@
+
+> portfolio@0.1.0 dev
+> next dev -p 3002
+
+▲ Next.js 16.4.6 (Turbopack)
+- Local:         http://localhost:3002
+- Network:       http://10.100.10.21:3002
+✓ Ready in 933ms
+⚠ Warning: Next.js ignored package-lock.json in D:\projects\inzivo portfolio because it is outside the current Git repository (D:\projects\inzivo portfolio\portfolio-clone).
+ To use this directory, set `turbopack.root` in your Next.js config.
+
+✓ Running next.config.ts took 69ms
+- Cache Components enabled
+- Partial Prefetching enabled
+- Experiments (use with caution):
+  ✓ agentFeedback
+
+ GET / 200 in 546ms (next.js: 214ms, application-code: 332ms)
+ GET / 200 in 98ms (next.js: 2ms, application-code: 96ms)
+ GET / 200 in 142ms (next.js: 3ms, application-code: 139ms)
+ GET / 200 in 198ms (next.js: 8ms, application-code: 191ms)
+⚠ Fast Refresh had to perform a full reload when ./app/components/Sections.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./app/components/Sections.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+✓ Compiled in 50ms
+ GET / 200 in 172ms (next.js: 4ms, application-code: 168ms)
+ GET / 200 in 163ms (next.js: 2ms, application-code: 160ms)
+✓ Compiled in 35ms
+ GET / 200 in 75ms (next.js: 3ms, application-code: 72ms)
+ GET / 200 in 92ms (next.js: 1.8ms, application-code: 90ms)
+✓ Compiled in 33ms
+✓ Compiled in 35ms
+ GET / 200 in 65ms (next.js: 3ms, application-code: 62ms)

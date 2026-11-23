@@ -1,0 +1,23 @@
+
+> portfolio@0.1.0 dev
+> next dev -p 3002
+
+▲ Next.js 16.4.3 (Turbopack)
+- Local:         http://localhost:3002
+- Network:       http://10.100.10.21:3002
+✓ Ready in 815ms
+⚠ Warning: Next.js ignored package-lock.json in D:\projects\inzivo portfolio because it is outside the current Git repository (D:\projects\inzivo portfolio\portfolio-clone).
+ To use this directory, set `turbopack.root` in your Next.js config.
+
+✓ Running next.config.ts took 64ms
+- Cache Components enabled
+- Partial Prefetching enabled
+- Experiments (use with caution):
+  ✓ agentFeedback
+
+⚠ Your version of Next.js is affected by a known security vulnerability. This command is continuing after the upgrade reminder.
+Reference: https://registry.npmjs.org/-/npm/v1/security/advisories/bulk
+  Turbopack has seen frequent file updates and is waiting for the filesystem to settle (0.5s elapsed so far; last modified: "\\\\?\\D:\\projects\\inzivo portfolio\\portfolio-clone\\node_modules\\next\\dist\\compiled\\@next\\font\\dist\\google").
+ GET / 200 in 438ms (next.js: 191ms, application-code: 246ms)
+ GET / 200 in 151ms (next.js: 3ms, application-code: 148ms)
+[?25h
